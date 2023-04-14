@@ -94,8 +94,12 @@ if (settings.interactive) {
   }
 }
 
-std::string command;
+std::string command = "";
 for (int i = arg_i; i < argc; ++i) {
+  if (command == "") {
+	  command = argv[i];
+  	continue;
+  }
   command = command + " " + argv[i];
 }
 
